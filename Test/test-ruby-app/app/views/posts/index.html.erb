@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Title</th>
+      <th class="mdl-data-table__cell--non-numeric">Body</th>
+      <th class="mdl-data-table__cell--non-numeric">Author</th>
+      <th class="mdl-data-table__cell--non-numeric">Publication date</th>
+      <th class="mdl-data-table__cell--non-numeric" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric"><%= post.title %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= post.body %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= post.author %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= post.publication_date %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= link_to 'Show', post %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
