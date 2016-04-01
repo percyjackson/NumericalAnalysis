@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'tools/index'
   get 'welcome/index'
+  post 'tools/add' => 'tools#add'
 
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
