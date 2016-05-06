@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   post 'tools/add' => 'tools#add'
   post 'tools/funct' => 'tools#funct'
+  post 'tools/incremental' => 'tools#incremental'
+  post 'tools/interval' => 'tools#interval'
 
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
