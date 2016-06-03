@@ -184,5 +184,75 @@ class Utilities
     end
     return a
   end
-  
+  def signos(str)
+    str.gsub("--","+")
+  end
+  def sustitucionProgresiva(l,b,n)
+    z=Array.new(n,0)
+    m=Array.new(n) { Array.new(n+1) }
+   
+    s=1
+    while s<=n
+      j=1
+      while j<=s
+        tmp=l[s-1][j-1]
+        m[s-1][j-1]= tmp
+        j=j+1
+      end
+      s=s+1
+    end
+    i=1
+    while i<=n
+      tmp2= b[i-1]
+      m[i-1][n]=tmp2
+      i=i+1
+    end
+    i=1
+    while i<=n
+       acum1=0
+       j=1
+       while j<=i
+         acum1=acum1+z[j-1]*m[i-1][j-1]
+         j=j+1
+       end
+       tmp3 = b[i-1] - acum1 
+       z[i-1]=tmp3/ m[i-1][i-1]
+       i=i+1
+    end
+    return z
+  end
+  def sustitucionRegresiva(u,z,n)
+    x=Array.new(n,0)
+    m=Array.new(n) { Array.new(n+1) }
+   
+    s=1
+    while s<=n
+      j=1
+      while j<=n
+        tmp=u[s-1][j-1]
+        m[s-1][j-1]= tmp
+        j=j+1
+      end
+      s=s+1
+    end
+    i=1
+    while i<=n
+      tmp2= z[i-1]
+      m[i-1][n]=tmp2
+      i=i+1
+    end
+    i=n
+    while i>=1
+       acum1=0
+       j=i
+       while j<=n-1
+         acum1=acum1+x[j]*m[i-1][j]
+         j=j+1
+       end
+       tmp3 = m[i-1][n] - acum1 
+       x[i-1]=tmp3/ m[i-1][i-1]
+       i=i-1
+    end
+    return x
+  end
 end
