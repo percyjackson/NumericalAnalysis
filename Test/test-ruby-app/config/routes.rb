@@ -65,6 +65,9 @@ Rails.application.routes.draw do
   post 'tools/criteria' => 'tools#criteria'
   
   post 'methods/one_variable/punto_fijo' => 'methods/one_variable#punto_fijo'
+  post 'methods/one_variable/bisection2' => 'methods/one_variable#bisection2'
+  post 'methods/one_variable/reglaFalsa' => 'methods/one_variable#reglaFalsa'
+  post 'methods/one_variable/newtonModificado' => 'methods/one_variable#newtonModificado'
   get 'methods/one_variable/fixed_point' => 'fixed_point'
   post 'methods/one_variable/secante' => 'methods/one_variable#secante'
   post 'methods/one_variable/newtonRaphson' => 'methods/one_variable#newtonRaphson'

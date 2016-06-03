@@ -1,2 +1,102 @@
-<h1>Methods::OneVariable#newton2</h1>
-<p>Find me in app/views/methods/one_variable/newton2.html.erb</p>
+<div class="mdl-grid">
+  <div class="newtonModificado mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-card mdl-shadow--4dp mdl-color--blue-50">
+    <form id="fixedForm" action="/methods/one_variable/newtonModificado" method="POST">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Newton Modificado</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="inter" value="[<%= $interval.a %>,<%=$interval.b %>]" readonly>
+          <label class="mdl-textfield__label" for="inter">interval</label>
+        </div>
+        <div class="mdl-tooltip" for="inter">
+          Select the interval in:
+          <br>tools - intervals
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="iterations" name="iterations" value="<%= $iteraciones%>">
+          <label class="mdl-textfield__label" for="iterations">Iterations</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="tol" name="tol" value="<%= $tol%>">
+          <label class="mdl-textfield__label" for="tol">Tolerance</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="delta" name="delta" value="<%= $delta%>">
+          <label class="mdl-textfield__label" for="delta">Delta</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="ddx" name="ddx" value="<%= $gx %>">
+          <label class="mdl-textfield__label" for="ddx">f'(x)</label>
+        </div>
+        <div class="mdl-tooltip" for="ddx">
+          This is the function f(x):
+          <br>please replace it for your f'(x)
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="d2x" name="d2x" value="<%= $gx %>">
+          <label class="mdl-textfield__label" for="d2x">f''(x)</label>
+        </div>
+        <div class="mdl-tooltip" for="d2x">
+          This is the function f(x):
+          <br>please replace it for your f''(x)
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="x" name="x" value="<%= $x%>">
+          <label class="mdl-textfield__label" for="x">x</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-tooltip" for="x">
+          this is a suggestion of a point according to the interval
+          <br>you can change it
+        </div>
+      </div>
+      <div class="botones mdl-card__actions mdl-card--border ">
+        <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+          <i class="material-icons">done</i> Accept
+        </button>
+      </div>
+    </form>
+  </div>
+  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>Iter.</th>
+        <th>x</th>
+        <th>f(x)</th>
+        <th>Error</th>
+        <th>f'(x)</th>
+        <th>f''(x)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% $metodo.each do |pun| %>
+        <tr>
+          <td>
+            <%=pun[0]%>
+          </td>
+          <td>
+            <%=pun[1]%>
+          </td>
+          <td>
+            <%=pun[2]%>
+          </td>
+          <td>
+            <%=pun[3]%>
+          </td>
+          <td>
+            <%=pun[4]%>
+          </td>
+          <td>
+            <%=pun[5]%>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
