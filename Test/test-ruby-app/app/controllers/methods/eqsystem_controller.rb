@@ -5,6 +5,7 @@ $utilities = Utilities.new()
 $iteraciones = 10
 $metodo = []
 $n = 0
+$w = 0
 #$a = [[7,-2,1], [-8,42,-15], [3,12,-30]]
 #$b = [-2,3,70] 
 #$x0 = [-100,0,10]
@@ -24,6 +25,7 @@ $x0 = []
   end
   
   def jac
+    $metodo.clear
     $iteraciones = params[:iterations].to_f
     $delta = params[:delta].to_f
     $tol = params[:tol].to_f
@@ -35,7 +37,56 @@ $x0 = []
     $a = $utilities.strToMatrix(params[:A],$n)
     $x0 = $utilities.strToArray(params[:x0])
     jacobi2($a,$b,$x0)
+    
     redirect_to "/methods/eqsystem/jacobi.html"
+  end
+  
+  def ric
+    $metodo.clear
+    $iteraciones = params[:iterations].to_f
+    $delta = params[:delta].to_f
+    $tol = params[:tol].to_f
+    
+    
+    
+    $b = $utilities.strToArray(params[:b])
+    $n = $b.size
+    $a = $utilities.strToMatrix(params[:A],$n)
+    $x0 = $utilities.strToArray(params[:x0])
+    richardson2($a,$b,$x0)
+    redirect_to "/methods/eqsystem/richardson.html"
+  end
+  
+  def gas
+    $metodo.clear
+    $iteraciones = params[:iterations].to_f
+    $delta = params[:delta].to_f
+    $tol = params[:tol].to_f
+    
+    
+    
+    $b = $utilities.strToArray(params[:b])
+    $n = $b.size
+    $a = $utilities.strToMatrix(params[:A],$n)
+    $x0 = $utilities.strToArray(params[:x0])
+    gaussseidel2($a,$b,$x0)
+    redirect_to "/methods/eqsystem/gaussseidel.html"
+  end
+  
+  def sor3
+    $metodo.clear
+    $iteraciones = params[:iterations].to_f
+    $delta = params[:delta].to_f
+    $tol = params[:tol].to_f
+    
+    
+    $w = params[:w].to_f
+    $b = $utilities.strToArray(params[:b])
+    $n = $b.size
+    $a = $utilities.strToMatrix(params[:A],$n)
+    $x0 = $utilities.strToArray(params[:x0])
+    sor2($a,$b,$x0,$w)
+    redirect_to "/methods/eqsystem/sor.html"
   end
   
   def txc(t,x0,c,a,b)

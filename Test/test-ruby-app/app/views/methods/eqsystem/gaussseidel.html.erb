@@ -1,2 +1,88 @@
-<h1>Methods::Eqsystem#gaussseidel</h1>
-<p>Find me in app/views/methods/eqsystem/gaussseidel.html.erb</p>
+<div class="mdl-grid">
+  <div class="datos mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-card mdl-shadow--4dp mdl-color--blue-50">
+    <form id="fixedForm" action="/methods/eqsystem/gas" method="POST">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Gauss - Seidel</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+
+       
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="iterations" name="iterations" value="<%= $iteraciones%>">
+          <label class="mdl-textfield__label" for="iterations">Iterations</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="tol" name="tol" value="<%= $tol%>">
+          <label class="mdl-textfield__label" for="tol">Tolerance</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="delta" name="delta" value="<%= $delta%>">
+          <label class="mdl-textfield__label" for="delta">Delta</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="A" name="A" value="<%= $a.to_s%>">
+          <label class="mdl-textfield__label" for="A">A</label>
+        </div>
+        <div class="mdl-tooltip" for="A">
+          Example:
+          <br>[[7,-2,1], [-8,42,-15], [3,12,-30]]
+        </div>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="b" name="b" value="<%= $b.to_s%>">
+          <label class="mdl-textfield__label" for="b">b</label>
+        </div>
+        <div class="mdl-tooltip" for="b">
+          Example:
+          <br>[-2,3,70]
+        </div>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="x0" name="x0" value="<%= $x0.to_s%>">
+          <label class="mdl-textfield__label" for="x0">x0</label>
+        </div>
+        <div class="mdl-tooltip" for="x0">
+          Example:
+          <br>[-100,0,10]
+        </div>
+        
+      </div>
+      <div class="botones mdl-card__actions mdl-card--border ">
+        <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+          <i class="material-icons">done</i> Accept
+        </button>
+      </div>
+    </form>
+  </div>
+  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>Iter.</th>
+        <% cont = 0 %>
+        <% while cont < $n do %>
+        <th><%= "x#{cont}" %></th>
+        <% cont += 1 %>
+        <%  end %>
+        
+        <th>f(x)</th>
+        <th>Error</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <% $metodo.each do |pun| %>
+        <tr>
+          <% cont = 0 %>
+          <%while cont < pun.size do %>
+            <td><%= pun[cont] %></td>
+            <% cont += 1 %>
+          <%end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

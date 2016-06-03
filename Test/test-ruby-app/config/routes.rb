@@ -61,6 +61,9 @@ Rails.application.routes.draw do
   post 'methods/one_variable/newtonRaphson' => 'methods/one_variable#newtonRaphson'
   
   post 'methods/eqsystem/jac' => 'methods/eqsystem#jac'
+  post 'methods/eqsystem/ric' => 'methods/eqsystem#ric'
+  post 'methods/eqsystem/gas' => 'methods/eqsystem#gas'
+  post 'methods/eqsystem/sor3' => 'methods/eqsystem#sor3'
   
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
