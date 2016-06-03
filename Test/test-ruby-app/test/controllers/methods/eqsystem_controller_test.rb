@@ -1,18 +1,13 @@
 require 'test_helper'
 
 class Methods::EqsystemControllerTest < ActionController::TestCase
-  test "should get gaussseidel" do
-    get :gaussseidel
+  test "should get gausselimination" do
+    get :gausselimination
     assert_response :success
   end
 
-  test "should get richardson" do
-    get :richardson
-    assert_response :success
-  end
-
-  test "should get sor" do
-    get :sor
+  test "should get lu" do
+    get :lu
     assert_response :success
   end
 

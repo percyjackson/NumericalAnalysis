@@ -1,5 +1,5 @@
 class Methods::EqsystemController < ApplicationController
-skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
 require './app/assets/ruby/Utilities'
 $utilities = Utilities.new()
 $iteraciones = 10
@@ -163,4 +163,9 @@ $x0 = []
     sor2(a,b,x0,1)
   end
   
+  def gausselimination
+  end
+
+  def lu
+  end
 end

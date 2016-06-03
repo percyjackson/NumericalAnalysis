@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   namespace :methods do
+  get 'eqsystem/gausselimination'
+  end
+
+  namespace :methods do
+  get 'eqsystem/lu'
+  end
+
+  namespace :methods do
   get 'eqsystem/gaussseidel'
   end
 
@@ -58,6 +66,7 @@ Rails.application.routes.draw do
   
   post 'methods/one_variable/punto_fijo' => 'methods/one_variable#punto_fijo'
   get 'methods/one_variable/fixed_point' => 'fixed_point'
+  post 'methods/one_variable/secante' => 'methods/one_variable#secante'
   post 'methods/one_variable/newtonRaphson' => 'methods/one_variable#newtonRaphson'
   
   post 'methods/eqsystem/jac' => 'methods/eqsystem#jac'

@@ -6,6 +6,8 @@ $metodo = []
 $iteracion = []
 $gx = $funcion
 $gx = $gx.downcase
+$a = 0
+$b = 0
 
 
   def bisection
@@ -48,10 +50,49 @@ $gx = $gx.downcase
       cont +=1
     end
     redirect_to "/methods/one_variable/fixed_point.html"
-    
   end
 
   def secant
+  end
+  
+  def secante
+    $iteraciones = params[:iterations].to_f
+    $delta = params[:delta].to_f
+    $tol = params[:tol].to_f
+    $a = params[:a].to_f
+    $b = params[:b].to_f
+    $metodo.clear
+    iteracion = []
+    fun = $funcion
+    utilities = $utilities
+    a = $a
+    b = $b
+    fa = utilities.reemplazarX(fun,a)
+    fb = utilities.reemplazarX(fun,b)
+    
+    fa = utilities.evaluar(fa)
+    fb = utilities.evaluar(fb)
+    
+    xs = (b - ((b - a) / (fb - fa))*fb).round(15)
+    error = (b - a).abs.round(15).to_f
+    cont = 1
+    iteracion = [cont,a,b,xs,error]
+    $metodo.push(iteracion)
+    while (fa != fb) && (error > $tol) && (cont <= $iteraciones) && ((fb).abs > $delta) do
+      b = a
+      a = xs
+      fa = utilities.reemplazarX(fun,a)
+      fb = utilities.reemplazarX(fun,b)
+      fa = utilities.evaluar(fa)
+      fb = utilities.evaluar(fb)
+      xs = (b - ((b - a) / (fb - fa))*fb).round(15)
+      error = (b - a).abs.round(15).to_f
+      cont +=1
+      iteracion = [cont,a,b,xs,error]
+      $metodo.push(iteracion)
+    end
+    p $metodo
+    redirect_to "/methods/one_variable/secant.html"
   end
 
   def newton_raphson
