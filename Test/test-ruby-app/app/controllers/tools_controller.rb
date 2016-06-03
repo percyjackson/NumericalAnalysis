@@ -1,17 +1,20 @@
 class ToolsController < ApplicationController
-  require './app//assets/ruby/Utilities'
-  require './app//assets/ruby/interval'
+  require './app/assets/ruby/Utilities'
+  require './app/assets/ruby/interval'
   skip_before_filter :verify_authenticity_token
   $interval = Interval.new(0,0)
   $functions = [] 
   $intervals = []
-  #$funcion ="exp(3*x)-4*(x^2)+3-x^3+sin(x)"
-  $funcion ="sin(x)"
+  $funcion ="2x-exp(-x)"
+  #$funcion ="sin(x)"
   $funcion.downcase!
   puts $funcion
   $interA = 0
   $interB = 0
   $inc = 0
+  $tol = 0.to_f
+  $iteraciones = 0
+  $delta = 0.to_f
   $utilities = Utilities.new()
   def index
     @yeison = [5,3,2,1]
@@ -70,9 +73,14 @@ class ToolsController < ApplicationController
   end
   
   def interval
-    puts "HOla"
-    puts params[:inter]
     $interval = $intervals[params[:inter].to_i]
+    redirect_to tools_index_path
+  end
+  
+  def criteria
+    $iteraciones = params[:iterations].to_f
+    $delta = params[:delta].to_f
+    $tol = params[:tol].to_f
     redirect_to tools_index_path
   end
 end

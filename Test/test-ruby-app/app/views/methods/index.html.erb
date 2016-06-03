@@ -1,0 +1,113 @@
+<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+  <div class="page-content">
+    <!-- Your content goes here -->
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-bisection mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title mdl-card__media">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/bisection.html">Bisection</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-false-rule mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/false_rule.html">False rule</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+        </div>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-fixed-point mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/fixed_point.html">Fixed point</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          It amounts to making an initial guess of x0 and substituting this into the right side of the equation. The resulting value is denoted by x1; and then the process is repeated, this time substituting x1 into the right side 
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-secant mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/secant.html">Secant</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The secant method is a technique for finding the root of a scalar-valued function f(x) of a single variable x when no information about the derivative exists. the secant method is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function f.
+        </div>
+      </div>
+
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-newton-raphson mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/newton_raphson.html">Newton - Raphson</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Newton–Raphson method, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function. The method starts with a function f defined over the real numbers x, the function's derivative f', and an initial guess x0 for a root of the function f. If the function satisfies the assumptions made in the derivation of the formula and the initial guess is close, then a better approximation x1 is: x1= x0-(f(x0)/f'(x0))
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-newton-2 mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/one_variable/newton2.html">Multiple roots</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          This method is a variant of Newton’s method to solve equations that have roots with critical values (minimum, maximum or inflection).
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+  <div class="page-content">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-jacobi mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title mdl-card__media">
+          <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/jacobi.html">Jacobi</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-gauss-seidel mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/gaussseidel.html">Gauss seidel</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+        </div>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-richardson mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title mdl-card__media">
+          <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/richardson.html">Richardson</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-sor mdl-card mdl-shadow--4dp mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/sor.html">SOR</a></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mdl-layout__tab-panel" id="fixed-tab-3">
+  <div class="page-content">
+    <!-- Your content goes here -->
+    <h2>Interpolation</h2>
+  </div>
+</section>
+

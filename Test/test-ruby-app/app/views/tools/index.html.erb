@@ -1,147 +1,128 @@
-
-  <h1><%= p @function %></h1>
+<h1><%= p @function %></h1>
 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-  	<div class="page-content"><!-- Your content goes here -->
-		
-			<div class="snippet-group">
-      <div class="snippet-header">
-      <div class="snippet-demos">
-        <div class="snippet-demo-padding"></div>
-        <div class="snippet-demo">
-        	<br/>
-        	<!--<form id="doneForm" action="/tools/funct" method="POST"> -->
-        	  <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
-              <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Functions</h2>
-          </div>
-              <div class="mdl-card__supporting-text">
-            <div class="radios">
-              <ul class="demo-list-control mdl-list">
-                <%  $functions.each_with_index do |x,i| %>
-                  <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
+  <div class="page-content">
+    <!-- Your content goes here -->
+    <center>
+      <!--<form id="doneForm" action="/tools/funct" method="POST">-->
+      <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Functions</h2>
+        </div>
+        <div class="mdl-card__supporting-text radios">
+          <div class="radios2">
+            <ul class="demo-list-control mdl-list">
+              <% $functions.each_with_index do |x,i| %>
+                <li class="mdl-list__item">
+                  <span class="mdl-list__item-primary-content">
                       <i class="material-icons  mdl-list__item-avatar">functions</i>
                           <%= x %>
                     </span>
-                    <span class="mdl-list__item-secondary-action">
+                  <span class="mdl-list__item-secondary-action">
                       <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-<%="#{i}"%>">
                         <input type="radio" id="list-option-<%="#{i}"%>" class="mdl-radio__button" name="options" value="<%=i%>" />
                       </label>
                     </span>
-                 </li>
-                <% 
-                puts "#{x} => #{i}"
-                end %>
-              </ul>
-            </div>
+                </li>
+                <% puts "#{x} => #{i}" end %>
+            </ul>
           </div>
-              <div class="botones mdl-card__actions mdl-card--border ">
-                <button id="btn_add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  <i class="material-icons">add</i>
-                </button>
-                
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!--<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit" form="doneForm"> -->
-                <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  <i class="material-icons">done</i>
-                </a>
-              </div>
-            </div>
-        	<!--</form>-->
-        	<dialog id="dialog-add" class="mdl-dialog">
-            <h3 class="mdl-dialog__title">Add function</h3>
-            <div class="mdl-dialog__content">
-              <form id="addForm" method="POST" action="/tools/add">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="txt-function" name="fun">
-                  <label class="mdl-textfield__label" for="txt-function">Function</label>
-                </div>
-                <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit" form="addForm">
-              </form>
-            </div>
-            <div class="mdl-dialog__actions">
-              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <i class="material-icons">check_circle</i>
-              </button>
-              <button id="btn-close-add" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <i class="material-icons">cancel</i>
-              </button>
-            </div>
-            
-          </dialog>
-          
         </div>
-        <div class="snippet-demo-padding"></div>
+        <div class="botones mdl-card__actions mdl-card--border ">
+          <button id="btn_add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <i class="material-icons">add</i>
+          </button>
+
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <i class="material-icons">edit</i>
+          </button>
+
+          <button type="submit" value="Submit" form="doneForm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <i class="material-icons">done</i>
+          </button>
+        </div>
       </div>
-    </div>
-    
-    </div>
-    
-  	</div>
+      <!--</form>-->
+
+      <br>
+    </center>
+    <dialog id="dialog-add" class="mdl-dialog">
+      <form id="addForm" method="POST" action="/tools/add">
+        <h3 class="mdl-dialog__title">Add function</h3>
+        <div class="mdl-dialog__content">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="txt-function" name="fun">
+            <label class="mdl-textfield__label" for="txt-function">Function</label>
+          </div>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button type="submit" value="Submit" form="addForm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <i class="material-icons">check_circle</i>
+          </button>
+          <button id="btn-close-add" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <i class="material-icons">cancel</i>
+          </button>
+        </div>
+      </form>
+
+    </dialog>
+  </div>
 </section>
 <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-  	<div class="page-content"><!-- Incremental search-->
-  	<center>
-  	  <form id="searchForm" action="/tools/incremental" method="POST"> 
-        	  <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text"><%= p $funcion %></h2>
-              </div>
-              <div class="mdl-card__supporting-text">                
-                <div  class="interval">
-                  <h4>Interval</h4>
-                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="a" name="a">
-                      <label class="mdl-textfield__label" for="a">a</label>
-                      <span class="mdl-textfield__error">Input is not a number!</span>
-                     </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="b"  name="b">
-                     <label class="mdl-textfield__label" for="b">b</label>
-                     <span class="mdl-textfield__error">Input is not a number!</span>
-                    </div>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="i"  name="i">
-                  <label class="mdl-textfield__label" for="i">Incremental factor</label>
-                  <span class="mdl-textfield__error">Input is not a number!</span>
-                </div>
-              </div>
-              <div class="botones mdl-card__actions mdl-card--border ">
-                <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" >
-                  <i class="material-icons">search</i>
-                  Accept
-                </button>
-                
-                
-              </div>
+  <div class="page-content">
+    <!-- Incremental search-->
+    <center>
+      <form id="searchForm" action="/tools/incremental" method="POST">
+        <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text"><%= p $funcion %></h2>
           </div>
-        	</form>
-        	</center>
-    
-  	</div>
+          <div class="mdl-card__supporting-text">
+            <div class="interval">
+              <h4>Interval</h4>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="a" name="a">
+                <label class="mdl-textfield__label" for="a">a</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="b" name="b">
+                <label class="mdl-textfield__label" for="b">b</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="i" name="i">
+              <label class="mdl-textfield__label" for="i">Incremental factor</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+          </div>
+          <div class="botones mdl-card__actions mdl-card--border ">
+            <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+              <i class="material-icons">search</i> Accept
+            </button>
+
+
+          </div>
+        </div>
+      </form>
+      <br>
+    </center>
+
+  </div>
 </section>
 <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-  	<div class="page-content"><!-- Intervals -->
-		  <div class="page-content"><!-- Your content goes here -->
-		  <h2><%= $interval.a %></h2>
-			<div class="snippet-group">
-      <div class="snippet-header">
-      <div class="snippet-demos">
-        <div class="snippet-demo-padding"></div>
-        <div class="snippet-demo">
-        	<br/>
-        	<form id="intervalForm" action="/tools/interval" method="POST">
-        	  <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
-              <div class="mdl-card__title">
+  <div class="page-content">
+    <!-- Intervals -->
+    <center>
+      <form id="intervalForm" action="/tools/interval" method="POST">
+        <div class="mdl-card mdl-shadow--4dp mdl-card mdl-color--blue-50">
+          <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Select an interval</h2>
           </div>
-              <div class="mdl-card__supporting-text">
-            <div class="radios">
+          <div class="mdl-card__supporting-text">
+            <div class="radios2">
               <ul class="demo-list-control mdl-list">
-                <%  $intervals.each_with_index do |x,i| %>
+                <% $intervals.each_with_index do |x,i| %>
                   <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
                       <i class="material-icons  mdl-list__item-avatar">stars</i>
@@ -152,67 +133,74 @@
                         <input type="radio" id="interval-option-<%="#{i}"%>" class="mdl-radio__button" name="inter" value="<%=i%>" />
                       </label>
                     </span>
-                 </li>
-                <% 
-                puts "#{x} => #{i}"
-                end %>
+                  </li>
+                  <% puts "#{x} => #{i}" end %>
               </ul>
             </div>
           </div>
-              <div class="botones mdl-card__actions mdl-card--border ">
-                <!--<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit" form="doneForm"> 
+          <div class="botones mdl-card__actions mdl-card--border ">
+            <!--<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit" form="doneForm"> 
                 <a type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                   <i class="material-icons">done</i>
                 </a> -->
-                <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" >
-                  <i class="material-icons">done</i>
-                </button>
-              </div>
-            </div>
-        	</form>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+              <i class="material-icons">done</i>
+            </button>
+          </div>
         </div>
-        <div class="snippet-demo-padding"></div>
-      </div>
-    </div>
-    
-    </div>
-    
-  	</div>
-		</div>
+      </form>
+      <br>
+    </center>
+  </div>
 </section>
 <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-  	<div class="page-content"><!-- Criteri -->
-		<h3>Tab 4</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit animi non consequatur, quae quasi at, numquam ipsa voluptatibus reprehenderit tempora accusantium molestiae aspernatur recusandae deleniti vitae soluta laborum commodi. Libero!</p>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-  	</div>
+  <div class="page-content">
+    <!-- Criteri -->
+    <center>
+      <form id="criteriaForm" action="/tools/criteria" method="POST">
+        <div class="mdl-card mdl-shadow--4dp mdl-color--blue-50">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Place your criteria</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="iterations" name="iterations" value="<%= $iteraciones%>">
+              <label class="mdl-textfield__label" for="iterations">Iterations</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <div class="mdl-tooltip" for="iterations">
+              Insert the number of iterations
+              <br> that you want
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="tol" name="tol" value="<%= $tol%>">
+              <label class="mdl-textfield__label" for="tol">Tolerance</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <div class="mdl-tooltip" for="tol">
+              descripción de
+              <br> tolerancia
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="delta" name="delta" value="<%= $delta%>">
+              <label class="mdl-textfield__label" for="delta">Delta</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <div class="mdl-tooltip" for="delta">
+              Descripción de
+              <br> delta
+            </div>
+
+          </div>
+          <div class="botones mdl-card__actions mdl-card--border ">
+            <button id="btn_accept_criteria" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit" for="criteriaForm">
+              <i class="material-icons">done</i> Accept
+            </button>
+          </div>
+        </div>
+      </form>
+    </center>
+  </div>
 </section>

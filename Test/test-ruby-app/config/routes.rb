@@ -1,11 +1,67 @@
 Rails.application.routes.draw do
+  namespace :methods do
+  get 'eqsystem/gaussseidel'
+  end
+
+  namespace :methods do
+  get 'eqsystem/richardson'
+  end
+
+  namespace :methods do
+  get 'eqsystem/sor'
+  end
+
+  namespace :methods do
+  get 'eqsystem/jacobi'
+  end
+
+  namespace :methods do
+  get 'one_variable/bisection'
+  end
+
+  namespace :methods do
+  get 'one_variable/false_rule'
+  end
+
+  namespace :methods do
+  get 'one_variable/fixed_point'
+  end
+
+  namespace :methods do
+  get 'one_variable/secant'
+  end
+
+  namespace :methods do
+  get 'one_variable/newton_raphson'
+  end
+
+  namespace :methods do
+  get 'one_variable/newton2'
+  end
+
+  namespace :methods do
+  get 'one_variable/fixed_point'
+  end
+
+ 
+
+  get 'methods/index'
+
   get 'tools/index'
   get 'welcome/index'
+  get 'methods/index'
   post 'tools/add' => 'tools#add'
   post 'tools/funct' => 'tools#funct'
   post 'tools/incremental' => 'tools#incremental'
   post 'tools/interval' => 'tools#interval'
-
+  post 'tools/criteria' => 'tools#criteria'
+  
+  post 'methods/one_variable/punto_fijo' => 'methods/one_variable#punto_fijo'
+  get 'methods/one_variable/fixed_point' => 'fixed_point'
+  post 'methods/one_variable/newtonRaphson' => 'methods/one_variable#newtonRaphson'
+  
+  post 'methods/eqsystem/jac' => 'methods/eqsystem#jac'
+  
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

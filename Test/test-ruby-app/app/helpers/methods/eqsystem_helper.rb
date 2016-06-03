@@ -1,0 +1,2 @@
+module Methods::EqsystemHelper
+end
