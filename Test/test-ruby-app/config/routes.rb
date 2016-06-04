@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
   namespace :methods do
+  get 'interpolation/lagrange'
+  end
+
+  namespace :methods do
+  get 'interpolation/newton'
+  end
+
+  namespace :methods do
+  get 'interpolation/linear'
+  end
+
+  namespace :methods do
+  get 'interpolation/cubic'
+  end
+
+  namespace :methods do
+  get 'interpolation/reduction'
+  end
+
+  namespace :methods do
   get 'eqsystem/gausselimination'
   end
 
