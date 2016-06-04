@@ -184,9 +184,11 @@ class Utilities
     end
     return a
   end
+  
   def signos(str)
     str.gsub("--","+")
   end
+  
   def sustitucionProgresiva(l,b,n)
     z=Array.new(n,0)
     m=Array.new(n) { Array.new(n+1) }
@@ -221,6 +223,7 @@ class Utilities
     end
     return z
   end
+  
   def sustitucionRegresiva(u,z,n)
     x=Array.new(n,0)
     m=Array.new(n) { Array.new(n+1) }
@@ -254,5 +257,41 @@ class Utilities
        i=i-1
     end
     return x
+  end
+  
+  def elim(a,b)
+    n = b.size
+    i = 0
+    while i < (n-1)
+      j = i + 1
+      while j   < n 
+        #puts a[j][i]
+        #puts a[i][i]
+        numerador = a[j][i].to_f
+        denominador = a[i][i].to_f
+        div = (numerador/denominador)*(-1)
+        r1 = b[i]
+        r2 = b[j]
+        mul = div * r1
+        sum = mul + r2
+        b[j] = sum
+        #puts "r1 = #{b[i]}"
+        #puts "r2 = #{b[j]}"
+        k = i
+        while k < n
+          #puts a[j][k] #r2
+          #puts a[i][k] #r1
+          r1 = a[i][k] #r1
+          r2 = a[j][k] #r2
+          mul = div * r1
+          sum = mul + r2
+          a[j][k] = sum
+          k += 1
+        end
+        j += 1
+      end
+      i += 1
+    end
+    return a,b
   end
 end

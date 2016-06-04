@@ -165,7 +165,16 @@ $x0 = []
   
   def gausselimination
   end
-
+  
+  def gausselimination2
+    $b = $utilities.strToArray(params[:b])
+    $n = $b.size
+    $a = $utilities.strToMatrix(params[:A],$n)
+    
+    $a, $b = $utilities.elim($a,$b)
+    redirect_to "/methods/eqsystem/gausselimination.html"
+  end
+  
   def lu
   end
 end

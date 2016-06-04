@@ -76,6 +76,8 @@ Rails.application.routes.draw do
   post 'methods/eqsystem/ric' => 'methods/eqsystem#ric'
   post 'methods/eqsystem/gas' => 'methods/eqsystem#gas'
   post 'methods/eqsystem/sor3' => 'methods/eqsystem#sor3'
+  post 'methods/eqsystem/gausselimination2' => 'methods/eqsystem#gausselimination2'
+  
   
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
