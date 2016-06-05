@@ -87,6 +87,7 @@ Rails.application.routes.draw do
   post 'methods/one_variable/punto_fijo' => 'methods/one_variable#punto_fijo'
   post 'methods/one_variable/bisection2' => 'methods/one_variable#bisection2'
   post 'methods/one_variable/reglaFalsa' => 'methods/one_variable#reglaFalsa'
+  
   post 'methods/one_variable/newtonModificado' => 'methods/one_variable#newtonModificado'
   get 'methods/one_variable/fixed_point' => 'fixed_point'
   post 'methods/one_variable/secante' => 'methods/one_variable#secante'
@@ -97,6 +98,8 @@ Rails.application.routes.draw do
   post 'methods/eqsystem/gas' => 'methods/eqsystem#gas'
   post 'methods/eqsystem/sor3' => 'methods/eqsystem#sor3'
   post 'methods/eqsystem/gausselimination2' => 'methods/eqsystem#gausselimination2'
+  
+  post 'methods/interpolation/lagrange2' => 'methods/interpolation#lagrange2'
   
   
   resources :posts
