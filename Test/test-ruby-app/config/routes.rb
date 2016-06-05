@@ -104,6 +104,7 @@ Rails.application.routes.draw do
   post 'methods/interpolation/newton2' => 'methods/interpolation#newton2'
   post 'methods/interpolation/linear2' => 'methods/interpolation#linear2'
   post 'methods/interpolation/cubic2' => 'methods/interpolation#cubic2'
+  post 'methods/interpolation/reduction2' => 'methods/interpolation#reduction2'
   
   
   

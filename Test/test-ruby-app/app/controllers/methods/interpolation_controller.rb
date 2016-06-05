@@ -139,4 +139,42 @@ $metodo = []
 
   def reduction
   end
+  def reduction2
+     $metodo.clear
+     $x = $utilities.strToArray(params[:x])
+     $y = $utilities.strToArray(params[:y])
+     $valor = params[:valor].to_f
+     #valor=$valor
+     n=$x.size
+     x=$x
+     y=$y
+     i=0
+     pol="P(x)="
+     a=["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
+        "O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+     while i<n-1
+       
+       pol=pol + a[i].to_s + "*x^" + (n-1-i).to_s + "+"
+       i=i+1
+     end
+     
+     pol = pol+ a[i].to_s
+     puts pol
+     $iteracion = ["Polinomio ",pol]
+      $metodo.push($iteracion)
+     pol=pol.downcase
+     pol=$utilities.signos(pol)
+     puts pol
+     j=0
+     while j<n
+       ecu = $utilities.reemplazarX(pol,x[j])
+       ecu = ecu + "= "+ y[j].to_s
+       name="Ecuacion " + (j+1).to_s
+       $iteracion = [name,ecu]
+       $metodo.push($iteracion)
+       j=j+1
+     end
+      redirect_to "/methods/interpolation/reduction.html"
+  end
+  
 end
