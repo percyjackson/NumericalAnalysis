@@ -259,6 +259,25 @@ class Utilities
     return x
   end
   
+  def sustitucionReg(a,b)
+    n = b.size
+    i = n-1
+    x = []
+    while i >= 0
+      j = i+1
+      sum = 0
+      while j < n
+        sum += a[i][j] * x[j]
+        j += 1
+      end
+      resta = b[i]-sum
+      div = resta / a[i][i]
+      x[i] = div
+      i -= 1
+    end
+    return x
+  end
+  
   def elim(a,b)
     n = b.size
     i = 0
