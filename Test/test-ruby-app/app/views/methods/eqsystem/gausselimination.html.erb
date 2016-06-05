@@ -32,7 +32,7 @@
       </div>
     </form>
   </div>
-  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
       <tr>
         <% cont = 0 %>
@@ -59,6 +59,70 @@
             <% i += 1 %>
           </tr>
       <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="mdl-grid">
+  <table class="mdl-cell mdl-cell--8-col  mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <% cont = 0 %>
+        <% while cont < $n do %>
+        <th><%= "" %></th>
+        <% cont += 1 %>
+        <%  end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% n = $b.size
+        i = 0
+        while i < n do %>
+          <tr>
+            <% j = 0
+              fila = $a2[i] %>
+            <%while j < n do %>
+              <td><%= fila[j] %></td>
+              <% j += 1 %>
+            <%end %>
+            <% i += 1 %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <table class="mdl-cell mdl-cell--2-col  mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>x</th>
+        <th>value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% $xs.each_with_index do |x,i| %>
+        <tr>
+          <td>
+            <%="x#{i}"%>
+          </td>
+          <td>
+            <%=$xs[i]%>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <table class="mdl-cell mdl-cell--2-col  mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>b</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% $b.each_with_index do |x,i| %>
+        <tr>
+          <td>
+            <%=$b[i]%>
+          </td>
+        </tr>
+        <% end %>
     </tbody>
   </table>
 </div>

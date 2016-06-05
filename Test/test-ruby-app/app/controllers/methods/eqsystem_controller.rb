@@ -2,7 +2,6 @@ class Methods::EqsystemController < ApplicationController
   skip_before_filter :verify_authenticity_token
 require './app/assets/ruby/Utilities'
 $utilities = Utilities.new()
-$iteraciones = 10
 $metodo = []
 $n = 0
 $w = 0
@@ -10,9 +9,9 @@ $w = 0
 #$b = [-2,3,70] 
 #$x0 = [-100,0,10]
 $a = []
-$z = []
 $b = []
 $x0 = []
+$xs = []#x sustitución regresiva
   def gaussseidel
   end
 
@@ -93,10 +92,13 @@ $x0 = []
   def txc(t,x0,c,a,b)
     cont = 0;
     puts "Iter. \t x \t \t \t fx  \t \t error"
-    error = "N/A"
+    error = fx = 1000
     iteracion = []
     $metodo.clear
-    while (cont < $iteraciones)
+    while (cont <= $iteraciones && error > $tol && fx > $delta )
+      if cont == 0
+        error = "N/A"
+      end
       cont += 1;
       ax = $utilities.multMatrices(a,x0)
       axb = $utilities.restMatrices(ax,b)
@@ -171,108 +173,13 @@ $x0 = []
     $b = $utilities.strToArray(params[:b])
     $n = $b.size
     $a = $utilities.strToMatrix(params[:A],$n)
-    
+    $a2 =$a
+    $b2 = $b
     $a, $b = $utilities.elim($a,$b)
+    $xs = $utilities.sustitucionReg($a,$b)
     redirect_to "/methods/eqsystem/gausselimination.html"
   end
   
   def lu
   end
-  def lu2
-    $b = $utilities.strToArray(params[:b])
-    $met = $utilities.strToArray(params[:met])
-    $n = $b.size
-    $a = $utilities.strToMatrix(params[:A],$n)
-    
-    n=$n
-    a=$a
-    b=$b
-    z=[n]
-    x=[n]
-    l=Array.new(n,0) { Array.new(n,0) }
-    u=Array.new(n,0) { Array.new(n,0) }
-    if $met ==1
-       
-    
-      s=0
-      while s<n
-        u[s][s]=1
-        s=s+1
-      end
-      
-      i=1
-      while i<=n
-        j=i
-        while j<=n
-          acum=0
-          k=2
-          while k<=i
-            acum=acum+u[k-2][i-1]*l[j-1][k-2]/u[i-1][i-1]
-            
-            k=k+1
-          end
-          aux2=a[i-1][j-1]-acum/u[i-1][i-1]
-          l[i-1][j-1]=aux2
-          j=j+1
-        end
-        j=i
-        while j<=n-1
-          acum1=0
-          k=2
-          while k<=i
-            acum1=acum1+u[k-2][j]*l[i-1][k-2]
-            k=k+1
-          end
-          acum3 = (a[j][i-1] - acum1) / l[i-1][i-1]
-          u[j][i-1]=acum3
-          j=j+1
-        end   
-        i=i+1
-      end
-     
-      
-    else
-       s=0
-      while s<n
-        l[s][s]=1
-        s=s+1
-      end
-      
-      i=1
-      while i<=n
-        j=i
-        while j<=n
-          acum=0
-          k=2
-          while k<=i
-            acum=acum+u[k-2][j-1]*l[i-1][k-2]
-            
-            k=k+1
-          end
-          aux2=a[i-1][j-1]-acum/l[i-1][i-1]
-          u[i-1][j-1]=aux2
-          j=j+1
-        end
-        j=i
-        while j<=n-1
-          acum1=0
-          k=2
-          while k<=i
-            acum1=acum1+l[j][k-2]*u[k-2][i-1]
-            k=k+1
-          end
-          acum3 = (a[j][i-1] - acum1) / u[i-1][i-1]
-          l[j][i-1]=acum3
-          j=j+1
-        end   
-        i=i+1
-      end
-    end
-    $z = $utilities.sustitucionProgresiva(l,$b,$n);
-    $b = $utilities.sustitucionRegresiva(u,$z,$n);
-    
-    redirect_to "/methods/eqsystem/lu.html"
-  end
-  
-
 end

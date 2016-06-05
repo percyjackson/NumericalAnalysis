@@ -1,40 +1,26 @@
 <div class="mdl-grid">
-  <div class="tamNormal mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-card mdl-shadow--4dp mdl-color--blue-50">
+  <div class="cubic mdl-cell mdl-cell--3-col  mdl-cell--4-col-phone mdl-card mdl-shadow--4dp mdl-color--blue-50">
     <form id="fixedForm" action="/methods/interpolation/cubic2" method="POST">
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Spline Cubico</h2>
+        <h2 class="mdl-card__title-text">Natural cubic spline</h2>
       </div>
       <div class="mdl-card__supporting-text">
-
         
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="x" name="x" value="[]">
+          <input class="mdl-textfield__input" type="text" id="x" name="x" value="<%="#{$x}"%>">
           <label class="mdl-textfield__label" for="x">Component X</label>
         </div>
         <div class="mdl-tooltip" for="x">
           Example:
-          <br>[-2,3,70]
+          <br>[-5,-2,1,2]
         </div><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="y" name="y" value="[]">
+          <input class="mdl-textfield__input" type="text" id="y" name="y" value="<%="#{$y}"%>">
           <label class="mdl-textfield__label" for="y">Component Y</label>
         </div>
         <div class="mdl-tooltip" for="y">
           Example:
-          <br>[-2,3,70]
+          <br>[-7,5,3,30]
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="valor" name="valor" value=0.0>
-          <label class="mdl-textfield__label" for="x">Evaluate</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-        <div class="mdl-tooltip" for="valor">
-          Numero que queremos evaluar en el polinomio
-          <br>
-        </div>
-       
-        
-        
-        
       </div>
       <div class="botones mdl-card__actions mdl-card--border ">
         <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
@@ -43,22 +29,54 @@
       </div>
     </form>
   </div>
-  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <table class="mdl-cell mdl-cell--2-col  mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
       <tr>
-        
-        <th>Polinomio</th>
-        
+        <th>x</th>
+        <th>y</th>
       </tr>
     </thead>
     <tbody>
-      <% $metodo.each do |pun| %>
+      <% $x.each_with_index do |x,i| %>
         <tr>
           <td>
-            <%=pun[0]%>
+            <%=x%>
           </td>
-          
-          
+          <td>
+            <%=$y[i]%>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <table class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>Natural equations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% $nat.each do |pun| %>
+        <tr>
+          <td>
+            <%=pun%>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <table class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>Equations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% $eq.each do |pun| %>
+        <tr>
+          <td>
+            <%=pun%>
+          </td>
         </tr>
         <% end %>
     </tbody>

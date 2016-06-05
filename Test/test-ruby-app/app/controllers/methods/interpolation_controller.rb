@@ -3,6 +3,10 @@ skip_before_filter :verify_authenticity_token
 require './app/assets/ruby/Utilities'
 $utilities = Utilities.new()
 $metodo = []
+$eq = []
+$nat = []
+$x = []
+$y = []
   def lagrange
   end
   def lagrange2
@@ -122,21 +126,27 @@ $metodo = []
      puntos=$x.size
      i=0
      while i<puntos-1
-      m =(y[i+1]-y[i])/(x[i+1]-x[i])
-      pol = + ("[" + m.to_s + "*(x-" + (x[i]).to_s + ")]+" + (y[i]).to_s)
-      a= pol.gsub("--","+") 
-      a1= x[i].to_s+"<=x<="+x[i+1].to_s
-      $iteracion = [a,a1]
-      $metodo.push($iteracion)
-      i=i+1
+        m =(y[i+1]-y[i])/(x[i+1]-x[i])
+        pol = + ("[" + m.to_s + "*(x-" + (x[i]).to_s + ")]+" + (y[i]).to_s)
+        a= pol.gsub("--","+") 
+        a1= x[i].to_s+"<=x<="+x[i+1].to_s
+        $iteracion = [a,a1]
+        $metodo.push($iteracion)
+        i=i+1
      end
-  
-  redirect_to "/methods/interpolation/linear.html"
+     redirect_to "/methods/interpolation/linear.html"
   end
 
   def cubic
   end
 
+  def cubic2
+    $metodo.clear
+    $x = $utilities.strToArray(params[:x])
+    $y = $utilities.strToArray(params[:y])
+    $eq, $nat = $utilities.cubic($x,$y)
+    redirect_to "/methods/interpolation/cubic.html"
+  end
   def reduction
   end
   def reduction2
