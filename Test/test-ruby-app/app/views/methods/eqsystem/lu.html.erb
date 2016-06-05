@@ -1,2 +1,75 @@
-<h1>Methods::Eqsystem#lu</h1>
-<p>Find me in app/views/methods/eqsystem/lu.html.erb</p>
+<div class="mdl-grid">
+  <div class="lu mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-card mdl-shadow--4dp mdl-color--blue-50">
+    <form id="gaussElimForm" action="/methods/eqsystem/lu2" method="POST">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Factorizacion LU</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="A" name="A" value="<%= $a.to_s%>">
+          <label class="mdl-textfield__label" for="A">A</label>
+        </div>
+        <div class="mdl-tooltip" for="A">
+          Example:
+          <br>[[3,-2,5], [1,2,-1], [-2,-1,1]]
+        </div>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="b" name="b" value="[]">
+          <label class="mdl-textfield__label" for="b">b</label>
+        </div>
+        <div class="mdl-tooltip" for="b">
+          Example:
+          <br>[-4,3,0]
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="met" name="met" value="1">
+          <label class="mdl-textfield__label" for="met">Metodo</label>
+        </div>
+        <div class="mdl-tooltip" for="met">
+          Example:
+          <br>1 doolitle
+              2 crout 
+              3 richardson
+              4 generico
+        </div>
+        
+      </div>
+      <div class="botones mdl-card__actions mdl-card--border ">
+        <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+          <i class="material-icons">done</i> Accept
+        </button>
+      </div>
+    </form>
+  </div>
+  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <% cont = 0 %>
+        <% while cont < $n do %>
+        <th><%= "x#{cont}" %></th>
+        <% cont += 1 %>
+        <%  end %>
+        <th>b</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <% n = $b.size
+        i = 0
+        while i < n do %>
+          <tr>
+            <% j = 0
+              fila = $a[i] %>
+            <%while j < n do %>
+              <td><%= fila[j] %></td>
+              <% j += 1 %>
+            <%end %>
+              <td><%= $b[i] %></td>
+            <% i += 1 %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

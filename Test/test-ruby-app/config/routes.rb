@@ -97,11 +97,14 @@ Rails.application.routes.draw do
   post 'methods/eqsystem/ric' => 'methods/eqsystem#ric'
   post 'methods/eqsystem/gas' => 'methods/eqsystem#gas'
   post 'methods/eqsystem/sor3' => 'methods/eqsystem#sor3'
+  post 'methods/eqsystem/lu2' => 'methods/eqsystem#lu2'
   post 'methods/eqsystem/gausselimination2' => 'methods/eqsystem#gausselimination2'
   
   post 'methods/interpolation/lagrange2' => 'methods/interpolation#lagrange2'
   post 'methods/interpolation/newton2' => 'methods/interpolation#newton2'
   post 'methods/interpolation/linear2' => 'methods/interpolation#linear2'
+  post 'methods/interpolation/cubic2' => 'methods/interpolation#cubic2'
+  
   
   
   resources :posts
