@@ -294,4 +294,142 @@ class Utilities
     end
     return a,b
   end
+  
+  def ordenar(x,y)
+      n = x.size
+      i = 0
+      puntos = Hash.new
+      while i < n
+          puntos[x[i]] = y[i]
+          i += 1
+      end
+      pun = []
+      pun = puntos.sort
+      puntos.sort
+      return pun
+  end
+  
+  def elimCero(n)
+      if (n%2)== 0 || (n%2)== 1
+         n = n.to_i
+      end
+      return n
+  end
+  
+  def elimUno(n)
+      if n == 1
+          return ""
+      elsif n == -1
+          return "-"
+      else
+          return n
+      end
+  end
+  
+  def masMenos(a)
+      a.map! {|x| x.gsub("+-","-") }
+      return a
+  end
+  
+  def condicion(a,b,n)
+      naturales = []
+      a = a*6
+      a = elimCero(a)
+      a = elimUno(a)
+      ecuacion = "#{a}a1+2b1=0"
+      naturales.push(ecuacion)
+      a = b*6
+      a = elimCero(a)
+      a = elimUno(a)
+      ecuacion = "#{a}a#{n-1}+2b#{n-1}=0"
+      naturales.push(ecuacion)
+      naturales = masMenos(naturales)
+      return naturales
+  end
+  
+  def cubic (x,y)
+      puntos = []
+      puntos = ordenar(x,y)
+      ecuaciones = []
+      n = puntos.size
+      #p(x)
+      i = 1
+      while i <= n
+          punto = []
+          punto = puntos[i-1]
+          a = punto[0]**3
+          b = punto[0]**2
+          c = punto[0]
+          
+          a = elimCero(a)
+          b = elimCero(b)
+          c = elimCero(c)
+          
+          a = elimUno(a)
+          b = elimUno(b)
+          c = elimUno(c)
+          ecuacion = ""
+          if i == 1
+              ecuacion = "#{a}a1+#{b}b1+#{c}c1+d1=#{punto[1]}"
+          elsif i == n
+              ecuacion = "#{a}a#{i-1}+#{b}b#{i-1}+#{c}c#{i-1}+d#{i-1}=#{punto[1]}"
+          else
+              ecuacion = "#{a}a#{i-1}+#{b}b#{i-1}+#{c}c#{i-1}+d#{i-1}=#{punto[1]}"
+              ecuaciones.push(ecuacion)
+              ecuacion = "#{a}a#{i}+#{b}b#{i}+#{c}c#{i}+d#{i}=#{punto[1]}"
+          end
+          ecuaciones.push(ecuacion)
+          i += 1
+      end
+      #puts ecuaciones
+      
+      #p'(x)
+      i = 1
+      while i <= n
+          punto = []
+          punto = puntos[i-1]
+          a = (punto[0]**2)*3
+          b = punto[0]*2
+          
+          a = elimCero(a)
+          b = elimCero(b)
+          
+          a = elimUno(a)
+          b = elimUno(b)
+          
+          ecuacion = ""
+          if i == 1 || i == n
+          else
+              ecuacion = "#{a}a#{i-1}+#{b}b#{i-1}+c#{i-1}=#{a}a#{i}+#{b}b#{i}+c#{i}"
+              ecuaciones.push(ecuacion)
+          end
+          
+          i += 1
+      end
+      
+      #p''(x)
+      i = 1
+      while i <= n
+          punto = []
+          punto = puntos[i-1]
+          a = punto[0]*6
+          
+          a = elimCero(a)
+          
+          a = elimUno(a)
+          
+          ecuacion = ""
+          if i == 1 || i == n
+          else
+              ecuacion = "#{a}a#{i-1}+2b#{i-1}=#{a}a#{i}+2b#{i}"
+              ecuaciones.push(ecuacion)
+          end
+          i += 1
+      end
+      ecuaciones = masMenos(ecuaciones)
+      naturales = []
+      naturales = condicion(puntos[0][0], puntos[n-1][0],n)
+      
+      return ecuaciones, naturales
+  end
 end
