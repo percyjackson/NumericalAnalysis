@@ -1,2 +1,66 @@
-<h1>Methods::Interpolation#newton</h1>
-<p>Find me in app/views/methods/interpolation/newton.html.erb</p>
+<div class="mdl-grid">
+  <div class="datos mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-card mdl-shadow--4dp mdl-color--blue-50">
+    <form id="fixedForm" action="/methods/interpolation/newton2" method="POST">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Newton</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="x" name="x" value="<%= $b.to_s%>">
+          <label class="mdl-textfield__label" for="x">Component X</label>
+        </div>
+        <div class="mdl-tooltip" for="x">
+          Example:
+          <br>[-2,3,70]
+        </div><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="y" name="y" value="<%= $b.to_s%>">
+          <label class="mdl-textfield__label" for="y">Component Y</label>
+        </div>
+        <div class="mdl-tooltip" for="y">
+          Example:
+          <br>[4,-3,10]
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="valor" name="valor" value=0.0>
+          <label class="mdl-textfield__label" for="x">Evaluate</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-tooltip" for="valor">
+          Numero que queremos evaluar en el polinomio
+          <br>
+        </div>
+       
+        
+        
+        
+      </div>
+      <div class="botones mdl-card__actions mdl-card--border ">
+        <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+          <i class="material-icons">done</i> Accept
+        </button>
+      </div>
+    </form>
+  </div>
+  <table class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        
+        <th>Polinomio</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% $metodo.each do |pun| %>
+        <tr>
+          <td>
+            <%=pun[0]%>
+          </td>
+          
+          
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>

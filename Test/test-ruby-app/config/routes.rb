@@ -100,6 +100,8 @@ Rails.application.routes.draw do
   post 'methods/eqsystem/gausselimination2' => 'methods/eqsystem#gausselimination2'
   
   post 'methods/interpolation/lagrange2' => 'methods/interpolation#lagrange2'
+  post 'methods/interpolation/newton2' => 'methods/interpolation#newton2'
+  post 'methods/interpolation/linear2' => 'methods/interpolation#linear2'
   
   
   resources :posts

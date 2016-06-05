@@ -55,8 +55,83 @@ $metodo = []
   end
   def newton
   end
+  def newton2
+     $metodo.clear
+     $x = $utilities.strToArray(params[:x])
+     $y = $utilities.strToArray(params[:y])
+     $valor = params[:valor].to_f
+     valor=$valor
+     x=$x
+     y=$y
+     puntos=$x.size
+     tabla = Array.new(puntos) { Array.new(puntos) }
+    
+     i=0
+     while i < puntos
+       tabla [i][0]=y[i]
+       i=i+1
+     end
+     s = 0
+     while s < puntos
+      j=1
+      while j<=s
+        tabla[s][j] = (tabla[s][j-1] - tabla[s-1][j-1])/(x[s] - x[s-j])
+        j=j+1
+      end
+      s=s+1
+     end
+    
+     pol = "P(x): "+(tabla[0][0].to_s)
+     temp= ""
+     resultado= tabla[0][0]
+     aux = 1 
+    
+     i=1
+     while i<puntos
+      temp = temp + "(x"+"-"+(x[i-1]).to_s+")"
+       if tabla [i][i]>0.0
+         pol= pol+"\n"+"+"+(tabla[i][i].to_s+"*"+temp.to_s)
+       else
+         pol= pol+"\n"+""+(tabla[i][i].to_s+"*"+temp.to_s)
+       end
+      aux = aux * (valor-x[i-1]);
+      resultado = resultado + tabla[i][i]*aux;
+      i=i+1
+     end
+     
+    
+     res=("f("+valor.to_s+") = "+ resultado.to_s)
+     $iteracion = [pol]
+     $metodo.push($iteracion)
+     $iteracion = [res]
+     $metodo.push($iteracion)
+     redirect_to "/methods/interpolation/newton.html"
+  end
+  
 
   def linear
+  end
+  def linear2
+     $metodo.clear
+     $x = $utilities.strToArray(params[:x])
+     $y = $utilities.strToArray(params[:y])
+     $valor = params[:valor].to_f
+     #valor=$valor
+     x=$x
+     y=$y
+     puntos=$x.size
+     i=0
+     while i<puntos-1
+      m =(y[i+1]-y[i])/(x[i+1]-x[i])
+      pol = + ("[" + m.to_s + "*(x-" + (x[i]).to_s + ")]+" + (y[i]).to_s)
+      a= pol.gsub("--","+") 
+      a1= x[i].to_s+"<=x<="+x[i+1].to_s
+      $iteracion = [a,a1]
+      $metodo.push($iteracion)
+      i=i+1
+     end
+  
+  redirect_to "/methods/interpolation/linear.html"
   end
 
   def cubic
