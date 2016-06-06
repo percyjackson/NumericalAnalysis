@@ -204,7 +204,6 @@ $b = 0
   def newton_raphson
     $gx = $funcion
     $gx = $gx.downcase
-    $metodo.clear
     $x = ($interval.a + $interval.b)/2
   end
 

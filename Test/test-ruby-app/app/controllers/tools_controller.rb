@@ -5,7 +5,7 @@ class ToolsController < ApplicationController
   $interval = Interval.new(0,0)
   $functions = [] 
   $intervals = []
-  $funcion ="2x-exp(-x)"
+  $funcion =""
   #$funcion ="sin(x)"
   $funcion.downcase!
   puts $funcion
@@ -28,7 +28,7 @@ class ToolsController < ApplicationController
   end
   
   def funct
-    @function = params[:options]
+    $funcion = $functions[params[:options].to_i]
     redirect_to tools_index_path
   end
   
