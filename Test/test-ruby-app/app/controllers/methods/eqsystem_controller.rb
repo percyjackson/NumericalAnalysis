@@ -11,6 +11,7 @@ $w = 0
 $a = []
 $b = []
 $x0 = []
+$z = []
 $xs = []#x sustitución regresiva
   def gaussseidel
   end
@@ -181,5 +182,99 @@ $xs = []#x sustitución regresiva
   end
   
   def lu
+  end
+  def lu2
+     $b = $utilities.strToArray(params[:b])
+     $options = $utilities.strToArray(params[:options])
+     $n = $b.size
+     $a = $utilities.strToMatrix(params[:A],$n)
+     
+     n=$n
+     a=$a
+    
+     l=Array.new(n,0) { Array.new(n,0) }
+     u=Array.new(n,0) { Array.new(n,0) }
+     options=$options[0].to_f
+     puts $options
+     if options==1.0
+       
+       s=0
+       while s<n
+         u[s][s]=1
+         s=s+1
+       end
+       
+       i=1
+       while i<=n
+         j=i
+         while j<=n
+           acum=0
+           k=2
+           while k<=i
+             acum=acum+u[k-2][i-1]*l[j-1][k-2]/u[i-1][i-1]
+             
+            k=k+1
+           end
+           aux2=a[i-1][j-1]-acum/u[i-1][i-1]
+           l[i-1][j-1]=aux2
+          j=j+1
+         end
+         j=i
+         while j<=n-1
+           acum1=0
+           k=2
+           while k<=i
+             acum1=acum1+u[k-2][j]*l[i-1][k-2]
+             k=k+1
+           end
+           acum3 = (a[j][i-1] - acum1) / l[i-1][i-1]
+           u[j][i-1]=acum3
+           j=j+1
+         end   
+         i=i+1
+       end
+      
+      else
+       
+        s=0
+       while s<n
+         l[s][s]=1
+         s=s+1
+       end
+       
+       i=1
+       while i<=n
+         j=i
+         while j<=n
+           acum=0
+           k=2
+           while k<=i
+             acum=acum+u[k-2][j-1]*l[i-1][k-2]
+            
+             k=k+1
+           end
+           aux2=a[i-1][j-1]-acum/l[i-1][i-1]
+           u[i-1][j-1]=aux2
+           j=j+1
+         end
+         j=i
+         while j<=n-1
+           acum1=0
+           k=2
+           while k<=i
+             acum1=acum1+l[j][k-2]*u[k-2][i-1]
+             k=k+1
+           end
+           acum3 = (a[j][i-1] - acum1) / u[i-1][i-1]
+           l[j][i-1]=acum3
+           j=j+1
+         end   
+         i=i+1
+       end
+     end
+     $z = $utilities.sustitucionProgresiva(l,$b,$n);
+     $xs = $utilities.sustitucionRegresiva(u,$z,$n);
+     
+     redirect_to "/methods/eqsystem/lu.html"
   end
 end

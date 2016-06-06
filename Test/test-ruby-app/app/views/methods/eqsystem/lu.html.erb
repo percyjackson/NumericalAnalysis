@@ -16,25 +16,27 @@
         </div>
         
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="b" name="b" value="[]">
+          <input class="mdl-textfield__input" type="text" id="b" name="b" value="<%= $b.to_s%>">
           <label class="mdl-textfield__label" for="b">b</label>
         </div>
         <div class="mdl-tooltip" for="b">
           Example:
           <br>[-4,3,0]
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="met" name="met" value="1">
-          <label class="mdl-textfield__label" for="met">Metodo</label>
-        </div>
-        <div class="mdl-tooltip" for="met">
-          Example:
-          <br>1 doolitle
-              2 crout 
-              3 richardson
-              4 generico
-        </div>
         
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+          <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+          <span class="mdl-radio__label">Doulittle</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+          <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+          <span class="mdl-radio__label">Crout</span>
+        </label>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+          <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+          <span class="mdl-radio__label">Cholesky</span>
+        </label>
+         
       </div>
       <div class="botones mdl-card__actions mdl-card--border ">
         <button id="btn_accept" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
