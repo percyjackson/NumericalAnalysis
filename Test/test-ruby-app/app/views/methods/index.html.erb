@@ -12,7 +12,7 @@
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-false-rule mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/one_variable/false_rule.html">False rule</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -22,7 +22,7 @@
     </div>
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-fixed-point mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/one_variable/fixed_point.html">Fixed point</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-secant mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/one_variable/secant.html">Secant</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -42,7 +42,7 @@
     </div>
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-newton-raphson mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/one_variable/newton_raphson.html">Newton - Raphson</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -51,7 +51,7 @@
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-newton-2 mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/one_variable/newton2.html">Multiple roots</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -70,16 +70,16 @@
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/gausselimination.html">Gaussian elimination</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+          Given an augmented matrix Ab, the purpose of the Gaussian Elimination is to do elementary row operations until we get the equivalent system, in which the coefficient matrix is an upper triangular matrix. Once we get the desired upper triangular matrix, regressive substitution is applied to solve the system of equations. 
         </div>
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-lu mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/lu.html">LU descomposition</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+          factors a matrix as the product of a lower triangular matrix and an upper triangular matrix. The product sometimes includes a permutation matrix as well
         </div>
       </div>
     </div>
@@ -89,16 +89,16 @@
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/jacobi.html">Jacobi</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+          Is an algorithm for determining the solutions of a diagonally dominant system of linear equations. Each diagonal element is solved for, and an approximate value is plugged in. The process is then iterated until it converges.
         </div>
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-gauss-seidel mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/gaussseidel.html">Gauss seidel</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+          The Gauss-Seidel method is an iterative algorithm for determining the solutions of a system of linear equations. For the execution of the method, first we try to convert the given A matrix to a diagonal dominant one moving its rows and columns. Then, we take each equation and put the diagonal variable in terms of the other variables. After that, we have to assign initial values to the variables and find the first approximation of each one using the cleared equations, but with the particularity that we replace the variable values not with the previous iterations ones, but with the current calculated ones.
         </div>
       </div>
     </div>
@@ -108,16 +108,16 @@
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/richardson.html">Richardson</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+          Is an iterative method for solving a system of linear equations. Richardson iteration was proposed by Lewis Richardson in his work dated 1910. It is similar to the Jacobi and Gauss–Seidel method.
         </div>
       </div>
 
       <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet card-sor mdl-card mdl-shadow--4dp mdl-color--blue-50">
-        <div class="mdl-card__title">
+        <div class="mdl-card__title mdl-card__media">
           <h2 class="mdl-card__title-text"><a href="/methods/eqsystem/sor.html">SOR</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+          Is a variant of the Gauss–Seidel method for solving a linear system of equations, resulting in faster convergence. A similar method can be used for any slowly converging iterative process.
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
           <h2 class="mdl-card__title-text"><a href="/methods/interpolation/lagrange.html">Lagrange</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The bisection method is simple, robust, and straight-forward: take an interval [a, b] such that f(a) and f(b) have opposite signs, find the midpoint of [a, b], and then decide whether the root lies on [a, (a + b)/2] or [(a + b)/2, b]. Repeat until the interval is sufficiently small.
+          For a given set of distinct points xi  and numbers yi, the Lagrange polynomial is the polynomial of the least degree that at each point xi  assumes the corresponding value yi 
         </div>
       </div>
      
@@ -141,7 +141,7 @@
           <h2 class="mdl-card__title-text"><a href="/methods/interpolation/newton.html">Newton</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The false-rule (false-position) method is a modification on the bisection method: if it is known that the root lies on [a, b], then it is reasonable that we can approximate the function on the interval by interpolating the points (a, f(a)) and (b, f(b)). In that case, why not use the root of this linear interpolation as our next approximation to the root?
+          This method is used to determine the polynomial that passes through some given points (x, f(x)).  The Newton´s interpolation method uses the concept of divided differences. The divided differences allow us to calculate several of the desired polynomial, because we use the given points incrementally to obtain an interpolating polynomial of different order in each step.
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@
           <h2 class="mdl-card__title-text"><a href="/methods/interpolation/linear.html">Linear spline</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          It amounts to making an initial guess of x0 and substituting this into the right side of the equation. The resulting value is denoted by x1; and then the process is repeated, this time substituting x1 into the right side 
+          is a method of curve fitting using linear polynomials to construct new data points within the range of a discrete set of known data points. 
         </div>
       </div>
 
@@ -160,7 +160,7 @@
           <h2 class="mdl-card__title-text"><a href="/methods/interpolation/cubic.html">Cubic spline</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          The secant method is a technique for finding the root of a scalar-valued function f(x) of a single variable x when no information about the derivative exists. the secant method is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function f.
+          Is a method of constructing new data points within the range of a discrete set of known data points.
         </div>
       </div>
 
@@ -171,7 +171,7 @@
           <h2 class="mdl-card__title-text"><a href="/methods/interpolation/reduction.html">Reduction</a></h2>
         </div>
         <div class="mdl-card__supporting-text">
-          Newton–Raphson method, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function. The method starts with a function f defined over the real numbers x, the function's derivative f', and an initial guess x0 for a root of the function f. If the function satisfies the assumptions made in the derivation of the formula and the initial guess is close, then a better approximation x1 is: x1= x0-(f(x0)/f'(x0))
+           Is the interpolation of a given data set by a polynomial: given some points, find a polynomial which goes exactly through these points.
         </div>
       </div>
     </div>
