@@ -1,0 +1,202 @@
+.getmdl-select .mdl-icon-toggle__label{float:right;margin-top:-30px;color:rgba(0,0,0,0.4)}.getmdl-select.is-focused .mdl-icon-toggle__label{color:#3f51b5}.getmdl-select .mdl-menu__container{width:100% !important}.getmdl-select .mdl-menu__container .mdl-menu .mdl-menu__item{font-size:16px}
+
+/*# sourceMappingURL=getmdl-select.min.css.map */
+/* line 4, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-bisection > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/10RootFinding/bisection/bisection.gif") center;
+  background-repeat: no-repeat;
+}
+
+/* line 11, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-false-rule > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://planetcalc.com/users/2/1403686370.gif") center;
+  background-repeat: no-repeat;
+}
+
+/* line 18, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-fixed-point > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/8b/Sine_fixed_point.svg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 25, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-secant > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/9/92/Secant_method.svg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 32, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-newton-raphson > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/e/e0/NewtonIteration_Ani.gif") center;
+  background-repeat: no-repeat;
+}
+
+/* line 39, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-newton-2 > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://sites.google.com/site/metodosdebusqueda/_/rsrc/1363821110367/metodos-de-solucion-para-ecuaciones-de-una-variable/metodos-abiertos/multiple-roots/pli.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 48, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-Gauss-elimination > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://web.mit.edu/10.001/Web/Course_Notes/gauss1.jpg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 55, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-lu > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/INT-APP/EQN-LU-1.jpg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 62, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-jacobi > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://rendon.x10.mx/pictures/jacobi_1.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 69, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-gauss-seidel > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://rendon.x10.mx/pictures/jacobi_2.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 76, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-richardson > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://www.colorker.com/uploads/Maxi_Andes_Blanco.jpg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 83, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-sor > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://mathfaculty.fullerton.edu/mathews/n2003/sormethod/SORmethodMod/Images/SORmethodMod_gr_10.gif") center;
+  background-repeat: no-repeat;
+}
+
+/* line 92, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-lagrange > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://i.stack.imgur.com/tKeCq.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 99, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-newton > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/05Interpolation/newton/images/p4.colour.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 106, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-linear > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://people.cs.uchicago.edu/~glk/class/scivis-2013/proj1/linterp.png") center;
+  background-repeat: no-repeat;
+}
+
+/* line 113, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-cubic > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://paulbourke.net/miscellaneous/interpolation/cubic.gif") center;
+  background-repeat: no-repeat;
+}
+
+/* line 120, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.card-reduction > .mdl-card__title {
+  color: #000000;
+  height: 200px;
+  background: url("http://www.colorker.com/uploads/Maxi_Andes_Blanco.jpg") center;
+  background-repeat: no-repeat;
+}
+
+/* line 129, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods.scss */
+.mdl-card__title > h2 > a {
+  color: inherent;
+  text-decoration: none;
+}
+/* line 4, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/eqsystem.scss */
+.sor {
+  height: 620px;
+}
+
+/* line 8, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/eqsystem.scss */
+.gaussElim {
+  height: 300px;
+}
+
+/* line 11, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/eqsystem.scss */
+.lu {
+  height: 400px;
+}
+/* line 4, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/interpolation.scss */
+.tamNormal {
+  height: 400px;
+}
+
+/* line 7, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/interpolation.scss */
+.cubic {
+  height: 290px;
+}
+/* line 4, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/one_variable.scss */
+.datos {
+  height: 560px;
+}
+
+/* line 7, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/methods/one_variable.scss */
+.newtonModificado {
+  height: 620px;
+}
+/* line 5, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/tools.scss */
+.botones {
+  text-align: center;
+}
+
+/* line 9, /home/ubuntu/workspace/NumericalAnalysis/Test/test-ruby-app/app/assets/stylesheets/tools.scss */
+.radios {
+  height: 500px;
+  overflow: scroll;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
